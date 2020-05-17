@@ -18,12 +18,9 @@ const axios = require("axios");
 
 // Send notification to slack
 axios
-  .post(
-    "https://hooks.slack.com/services/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",
-    {
-      text: "<!channel> wakkkeeee wakkkeee!",
-    }
-  )
+  .post(config.slack_webhook, {
+    text: "<!channel> wakkkeeee wakkkeee!",
+  })
   .then((res) => {
     console.log(res);
   })

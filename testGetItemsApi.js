@@ -35,7 +35,7 @@ defaultClient.secretKey = config.secret_key;
  * For more details refer: https://webservices.amazon.com/paapi5/documentation/common-request-parameters.html#host-and-region
  */
 defaultClient.host = "webservices.amazon.com";
-defaultClient.region = "us-east-1";
+defaultClient.region = "us-west-1";
 
 var api = new ProductAdvertisingAPIv1.DefaultApi();
 
