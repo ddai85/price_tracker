@@ -1,62 +1,27 @@
-# Product Advertising API 5.0 SDK for NodeJS
+/**
+ * Copyright 2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
 
-[![NPM](https://nodei.co/npm/paapi5-nodejs-sdk.svg?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/paapi5-nodejs-sdk/)
+// Run `npm install` locally before executing following code with `node sampleSearchItemsApi.js`
 
-[![Version](https://badge.fury.io/js/paapi5-nodejs-sdk.svg)](http://badge.fury.io/js/paapi5-nodejs-sdk) [![npm](https://img.shields.io/npm/dt/paapi5-nodejs-sdk.svg)](https://www.npmjs.com/package/paapi5-nodejs-sdk)
+/**
+ * This sample code snippet is for ProductAdvertisingAPI 5.0's SearchItems API
+ * For more details, refer:
+ * https://webservices.amazon.com/paapi5/documentation/search-items.html
+ */
 
-This repository contains the official Product Advertising API 5.0 NodeJS SDK called **paapi5-nodejs-sdk** that allows you to access the [Product Advertising API](https://webservices.amazon.com/paapi5/documentation/index.html) from your NodeJS app.
-
-## Installation
-
-### For [Node.js](https://nodejs.org/)
-
-The Product Advertising API NodeJS SDK can be installed via [npm](https://www.npmjs.com/package/paapi5-nodejs-sdk):
- 
-```shell
-npm install paapi5-nodejs-sdk --save
-```
-
-You should now be able to `require('paapi5-nodejs-sdk')` in javascript files.
-
-### For browser
-
-The library also works in the browser environment via npm and [browserify](http://browserify.org/). After following
-the above steps with Node.js and installing browserify with `npm install -g browserify`,
-perform the following (assuming *main.js* is your entry file, that's to say your javascript file where you actually 
-use this library):
-
-```shell
-browserify main.js > bundle.js
-```
-
-Then include *bundle.js* in the HTML pages.
-
-### Webpack Configuration
-
-Using Webpack you may encounter the following error: "Module not found: Error:
-Cannot resolve module", most certainly you should disable AMD loader. Add/merge
-the following section to your webpack config:
-
-```javascript
-module: {
-  rules: [
-    {
-      parser: {
-        amd: false
-      }
-    }
-  ]
-}
-```
-
-## Getting Started
-
-Please follow the [installation](#installation) instruction and execute the following JS code:
-
-Simple example for [SearchItems](https://webservices.amazon.com/paapi5/documentation/search-items.html) to discover Amazon products with the keyword 'Harry Potter' in Books category:
-
-```javascript
-var ProductAdvertisingAPIv1 = require('paapi5-nodejs-sdk');
+var ProductAdvertisingAPIv1 = require('./src/index');
 
 var defaultClient = ProductAdvertisingAPIv1.ApiClient.instance;
 
@@ -157,9 +122,3 @@ api.searchItems(searchItemsRequest).then(
     onError(error);
   }
 );
-```
-
-Complete documentation, installation instructions, and examples are available [here](https://webservices.amazon.com/paapi5/documentation/index.html).
-
-## License
-This SDK is distributed under the [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0), see LICENSE.txt and NOTICE.txt for more information.
