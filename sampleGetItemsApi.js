@@ -20,14 +20,14 @@
  * For more details, refer:
  * https://webservices.amazon.com/paapi5/documentation/get-items.html
  */
-
+var config = require("./config.js");
 var ProductAdvertisingAPIv1 = require("./src/index");
 
 var defaultClient = ProductAdvertisingAPIv1.ApiClient.instance;
 
 // Specify your credentials here. These are used to create and sign the request.
-defaultClient.accessKey = "AKIAJKGIWNVVHLTYPALA";
-defaultClient.secretKey = "bMFd7VVDIceWsdzQKxeGNty1yglJ7Y4nDxABeMHy";
+defaultClient.accessKey = config.access_key;
+defaultClient.secretKey = config.secret_key;
 
 /**
  * PAAPI Host and Region to which you want to send request.
@@ -43,7 +43,7 @@ var api = new ProductAdvertisingAPIv1.DefaultApi();
 var getItemsRequest = new ProductAdvertisingAPIv1.GetItemsRequest();
 
 /** Enter your partner tag (store/tracking id) and partner type */
-getItemsRequest["PartnerTag"] = "asthejoefli02-20";
+getItemsRequest["PartnerTag"] = config.partner_tag;
 getItemsRequest["PartnerType"] = "Associates";
 
 /** Enter the Item IDs for which item information is desired */
